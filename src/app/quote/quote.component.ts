@@ -9,6 +9,13 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   constructor() {}
+  
+  completeQuote(isComplete, index){
+    if (isComplete) {
+      this.quotes.splice(index,1);
+    }
+  }
+
   toggleDetails(index){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
