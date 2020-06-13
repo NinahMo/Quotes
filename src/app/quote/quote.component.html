@@ -1,14 +1,19 @@
-<div>
+<div class="container">
     <h1><b>QUOTES</b></h1>
+    <hr>
     <p>Where we quote your quotes</p>
     <h2>Quotes from Legends</h2>
-        <ul>
-            <li appHighlight>{{quotes}}</li> 
-            <div *ngFor='let quote of quotes;let i = index'>
-                <button (click)='toggleDetails(i)'>View Quote</button>
-                <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'completeQuote($event,i)'>Delete</app-quote-detail>
-            </div>
-        </ul>
+    <div class="row">
+        <div class="col-md-6">
+            <ul>
+                <li appHighlight>{{quotes}}</li> 
+                <div *ngFor='let quote of quotes;let i = index'>
+                    <button (click)='toggleDetails(i)'>View Quote</button>
+                    <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'completeQuote($event,i)'>Delete</app-quote-detail>
+                </div>
+            </ul>
+        </div>
+    </div>        
 </div>
 
 <div>

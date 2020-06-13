@@ -1,5 +1,8 @@
-<p>{{quote}}</p>
+<p>{{quote.quote}}</p>
 <p>{{quote.author}}</p> 
 <p>{{quote.poster}}</p>
+<p>Upvotes:{{quote.upvotes}}</p>
+<p>Downvotes:{{quote.downvotes}}</p>
 <button (click)='quoteComplete(true)'>Delete</button>
+<p>This quote was created {{quote.completeDate|dateCount}} days ago</p>
     
