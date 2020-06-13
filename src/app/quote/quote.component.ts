@@ -9,7 +9,7 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   constructor() {}
-  
+
   completeQuote(isComplete, index){
     if (isComplete) {
       this.quotes.splice(index,1);
@@ -27,14 +27,14 @@ export class QuoteComponent implements OnInit {
   submitType = 'save';
 
   quotes = [
-    new Quote("Raha jipe mwenyewe", "Anonymous", "Ninah", 0, 0),
-    new Quote("Stop killing us, our lives matter", "BLM", "User1", 0, 0),
-    new Quote("Tout est beau tant que tu l'impose", "Willy William", "Mozzy", 0, 0),
-    new Quote("Inauma but itabidi uzoee", "Simple Boy", "Stivo", 0, 0)
+    new Quote("Raha jipe mwenyewe", "Anonymous", "Ninah", 0, 0, new Date(2020,6,13)),
+    new Quote("Stop killing us, our lives matter", "BLM", "User1", 0, 0, new Date(2020,6,4)),
+    new Quote("Tout est beau tant que tu l'impose", "Willy William", "Mozzy", 0, 0, new Date(2018,7,21)),
+    new Quote("Inauma but itabidi uzoee", "Simple Boy", "Stivo", 0, 0, new Date(2019,8,10))
   ];
 
   onNew() {
-    this.quoteModel = new Quote('', '', '', 0, 0);
+    this.quoteModel = new Quote('', '', '', 0, 0, new Date());
     this.showNew = true;
     this.submitType = 'save';
   }
