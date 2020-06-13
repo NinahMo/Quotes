@@ -9,6 +9,9 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   constructor() {}
+  toggleDetails(index){
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  }
 
   quoteModel: Quote
 

@@ -1,13 +1,16 @@
 <div>
     <h1><b>QUOTES</b></h1>
-        <div *ngFor='let quote of quotes;let i = index'>
-            <button (click)='toggleDetails(i)'>Show Details</button>
-            <app-quote-detail *ngIf='quote.showDescription' [quote]='quote'></app-quote-detail>
-        </div>
     <p>Where we quote your quotes</p>
+    <h2>Quotes from Legends</h2>
+        <ul>
+            <li>{{quotes}}</li> 
+            <div *ngFor='let quote of quotes;let i = index'>
+                <button (click)='toggleDetails(i)'>View Quote</button>
+                <app-quote-detail *ngIf='quote.showDescription' [quote]='quote'></app-quote-detail>
+            </div>
+        </ul>
 </div>
 
-<h2>Quotes from Legends</h2>
 <div>
     <button (click)="onNew()" class="btn btn-info form-btn" id="form-btn">Add a new quote</button>
     <form (ngSubmit)="onSave()" *ngIf="showNew" id="quote-form">
