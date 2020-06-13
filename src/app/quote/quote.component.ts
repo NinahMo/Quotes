@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
+  title: 'quotes';
+  quotes: string[];
 
-  constructor() { }
+  constructor() {
+    this.quotes = ['What\'s coming is better than what\'s gone, \'Love is a scam']
+   }
 
   ngOnInit(): void {
   }
