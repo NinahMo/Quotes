@@ -1,1 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+body{
+    background-color: olivedrab;
+    background-image: url(../src/assets/image/quotes_bg4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Metal Mania', cursive;
+}

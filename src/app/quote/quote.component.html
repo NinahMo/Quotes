@@ -5,26 +5,16 @@
     <h2>Quotes from Legends</h2>
     <div class="row">
         <div class="col-md-6">
-            <ul>
-                <li appHighlight>{{quotes}}</li> 
-                <div *ngFor='let quote of quotes;let i = index'>
-                    <button (click)='toggleDetails(i)'>View Quote</button>
-                    <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'completeQuote($event,i)'>Delete</app-quote-detail>
-                </div>
-            </ul>
+            <div *ngFor='let quote of quotes;let i = index'>
+                <li appHighlight *ngIf= 'quote.upvote > 0'></li>
+                <button class="btn btn-success" (click)='toggleDetails(i)'>View Quote</button>
+                <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'completeQuote($event,i)'>Delete</app-quote-detail>
+            </div>
         </div>
     </div>        
 </div>
 
-<div>
-    <button (click)="onNew()" class="btn btn-info form-btn" id="form-btn">Add a new quote</button>
-    <form (ngSubmit)="onSave()" *ngIf="showNew" id="quote-form">
-        <span (click)="onCancel()" class="del">
-            <div class="form-group">
-                <label for="text-input">Quote</label>
-                <textarea class="form-control" placeholder="Type here" rows="5" name="text" id="text-input" required></textarea>
-            </div>
-        </span>
-    </form>
+<div class="col-md-6">
+    <app-form (addQuote)="addNewQuote($event)"></app-form>
 </div>
 

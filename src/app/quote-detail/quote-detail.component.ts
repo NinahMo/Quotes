@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Quote } from '../quote';
+import { DateCountPipe } from '../date-count.pipe';
 
 @Component({
   selector: 'app-quote-detail',
@@ -15,6 +16,12 @@ export class QuoteDetailComponent implements OnInit {
     this.isComplete.emit(complete);
   }
   
+  upvote(){
+    this.quote.upvotes = this.quote.upvotes +1;
+  }
+  downvote(){
+    this.quote.downvotes = this.quote.downvotes +1;
+  }
   constructor() { }
 
   ngOnInit(): void {
