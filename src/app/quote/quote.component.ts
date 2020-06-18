@@ -41,6 +41,15 @@ export class QuoteComponent implements OnInit {
     new Quote("Inauma but itabidi uzoee", "Simple Boy", "Stivo", 0, 0, new Date(2019,8,10))
   ];
 
+  deleteQuote(isComplete, index){
+    if (isComplete) {
+      let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].quote}?`)
+
+      if (toDelete){
+        this.quotes.splice(index,1)
+      }
+    }
+  }
 
   onNew() {
     this.quoteModel = new Quote('', '', '', 0, 0, new Date());

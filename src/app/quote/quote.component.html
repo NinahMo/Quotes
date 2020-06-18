@@ -1,5 +1,5 @@
 <div class="container">
-    <h1><b>QUOTES</b></h1>
+    <h1 class="text"><b>QUOTES</b></h1>
     <hr>
     <p>Where we quote your quotes</p>
     <h2>Quotes from Legends</h2>
@@ -8,7 +8,7 @@
             <div *ngFor='let quote of quotes;let i = index'>
                 <li appHighlight *ngIf= 'quote.upvote > 0'></li>
                 <button class="btn btn-success" (click)='toggleDetails(i)'>View Quote</button>
-                <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'completeQuote($event,i)'>Delete</app-quote-detail>
+                <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'deleteQuote($event,i)'>Delete</app-quote-detail>
             </div>
         </div>
     </div>        

@@ -6,3 +6,6 @@ body{
     background-size: cover;
     font-family: 'Metal Mania', cursive;
 }
+.text{
+    text-align: center;
+}
